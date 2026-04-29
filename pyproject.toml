@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scannie"
+version = "0.1.0"
+description = "CLI-first static triage scanner for PDF and EPUB documents"
+requires-python = ">=3.11"
+readme = "README.md"
+license = { text = "AGPL-3.0-or-later" }
+authors = [{ name = "Scannie Maintainers" }]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.6.0",
+    "pytest>=9.0.3",
+    "ruff>=0.15.12",
+    "ty>=0.0.33",
+]
+
+[project.scripts]
+scannie = "scannie.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+scannie = ["rules/*.yar"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+extend-exclude = [".claude"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "RUF"]
+ignore = ["E501"]
+
+[tool.ty.environment]
+python-version = "3.11"
+root = ["./src", "."]
+
+[tool.ty.terminal]
+error-on-warning = false
