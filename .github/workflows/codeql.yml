@@ -9,10 +9,7 @@ on:
   schedule:
     - cron: "17 4 * * 1"
 
-permissions:
-  actions: read
-  contents: read
-  security-events: write
+permissions: {}
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -22,6 +19,10 @@ jobs:
   analyze:
     name: Analyze
     runs-on: ubuntu-24.04
+    permissions:
+      actions: read
+      contents: read
+      security-events: write
 
     steps:
       - name: Harden Runner
