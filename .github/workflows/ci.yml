@@ -42,7 +42,7 @@ jobs:
         run: uv python install 3.11.14
 
       - name: Install just
-        uses: taiki-e/install-action@7769b73c2ec98c38dfcf2e18c83cfd4880c038c1 # v2
+        uses: taiki-e/install-action@6ed6112eb9893c58dd600eebccdf6e77ab7bfa9c # v2
         with:
           tool: just@1.50.0
 
