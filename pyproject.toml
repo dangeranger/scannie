@@ -14,7 +14,7 @@ authors = [{ name = "Scannie Maintainers" }]
 [dependency-groups]
 dev = [
     "pre-commit>=4.6.0",
-    "pytest>=9.0.3",
+    "pytest>=9.1.1",
     "ruff>=0.15.12",
     "ty>=0.0.33",
 ]
